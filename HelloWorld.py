@@ -1,3 +1,8 @@
+print("Hello this is a test")
+print("Hello this is a test")
+print("Hello this is a test")
+print("Hello this is a test")
+
 #Write a program that calculates how many seconds there are in an hour.
 
 seconds_in_min= 60
