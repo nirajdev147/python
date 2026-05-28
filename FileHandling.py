@@ -240,3 +240,25 @@ for num in numbers:
 file.close()
 
 print("Count of even numbers:", count)
+
+
+
+
+
+
+#Practice Qs1
+
+#Create a program: Ask user name + age and Save into file Then read file and show data
+
+
+name = input("Enter user name: ")
+age = input("Enter user age: ")
+
+
+with open("demo.txt", "a") as f:
+    f.write("\n" + name + "-" + age)
+
+with open("demo.txt", "r") as f:
+   data = f.read()
+   print(data)
+
