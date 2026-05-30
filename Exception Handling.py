@@ -61,14 +61,7 @@
 
 
 # Create:
-# 👉 calculator with exception handling
-
-# Handle:
-
-# invalid input
-# divide by zero
-
-# 🔥 This is real beginner project practice.
+# calculator with exception handling
 
 try:
     a = int(input("Enter first number: "))
