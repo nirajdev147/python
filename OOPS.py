@@ -484,7 +484,145 @@ s1.area()
 
 
 '''------------------------------------Encapsulation-------------------------------------'''
+
+
+# Encapsulation is about protecting your data inside a class
+# It means keeping data (properties) and methods together in a class, while controlling how the data can be accessed from outside the class.
+# This prevents accidental changes to your data and hides the internal details of how your class works.
+
+
+#   In Python, you can make properties private by using a double underscore __ prefix
+#   Private properties cannot be accessed directly from outside the class.
+#   To access a private property, you can create a getter method: 
+#   To modify a private property, you can create a setter method.
+#   Python also has a convention for protected properties using a single underscore _ prefix:
+
+
+#Example
+
+# class person:
+#    def __init__(self, name, age):
+#       self.name = name
+#       self.__age = age   #private property
+
+# c1 = person("Niraj", 24)
+# print(c1.name)
+# print(c1.age)    # This will cause an error
+
+
+
+
+# Accessing private property using getter method
+
+class Person:
+    def __init__(self, name, age):
+      self.name = name
+      self.__age = age
+
+    def get_age(self):
+       return self.__age
+    
+s1 = Person("Niraj Dev", 24)
+print(s1.name)
+print(s1.get_age())
+
+    
+# Modifying Private Property using setter method
+
+class Person:
+    
+    def __init__(self, name, age):
+      self.name = name
+      self.__age = age
+    
+    def get_age(self):
+       return self.__age
+    
+    def set_age(self, age):
+        if age > 0:
+          self.__age = age
+
+        else:
+           print("Age must be positive")
+
+p1 = Person("Nikesh", 25)
+print(p1.get_age())
+
+p1.set_age(26)
+print(p1.get_age())
+
+
+#    Another Example
+
+# Create a class called "Student" with private variables called "marks". Modify the marks value using setter method and read the marks
+
+class Student:
+   
+    def __init__(self, name, marks):
+      self.name = name
+      self.__marks = marks
+
+    def set_marks(self, marks):
+       self.__marks = marks
+
+    def get_marks(self):
+       return self.__marks
+    
+    
+
+s1 = Student("Pratima", 40)
+print(s1.get_marks())
+    
+s1.set_marks(50)
+print(s1.get_marks())
+          
+    
+# Create a protected property
+
+class Person:
+  def __init__(self, name, salary):
+    self.name = name
+    self._salary = salary  # Protected property
+
+p1 = Person("Linus", 50000)
+print(p1.name)
+print(p1._salary)  # Can access, but shouldn't
+
+
+
 '''------------------------------------Abstraction-------------------------------------'''
 
+#   Hiding internal details and showing only essential features
+
+#   Like you only know how to drive your car , you don't know how it works.
+
+
+# Example (without abstraction)
+
+class Car:
+    def start_engine(self):
+        print("Engine Started...")
+
+c = Car()
+c.start_engine()
+
+
+
+#Another Example(with Abstraction)
+
+from abc import ABC, abstractmethod
+
+class Car(ABC):
+
+    @abstractmethod
+    def start(self):
+        pass
+
+class Tesla(Car):
+   def start(self):
+    print("Tesla start silently...")
+
+c = Tesla()
+c.start()
 
 
